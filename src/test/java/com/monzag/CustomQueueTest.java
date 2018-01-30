@@ -44,4 +44,13 @@ class CustomQueueTest {
         assertEquals(expect, queue.toString());
     }
 
+    @Test
+    void testDequeue() {
+        queue.enqueue(3);
+        queue.enqueue(4);
+        Integer expect = 3;
+        assertEquals(expect, queue.dequeue());
+    }
+
+
 }
