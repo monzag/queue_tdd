@@ -45,7 +45,7 @@ class CustomQueueTest {
     }
 
     @Test
-    void testDequeue() {
+    void testDequeue() throws EmptyQueueException {
         queue.enqueue(3);
         queue.enqueue(4);
         Integer expect = 3;
@@ -53,7 +53,7 @@ class CustomQueueTest {
     }
 
     @Test
-    void testDequeue2() {
+    void testDequeue2() throws EmptyQueueException {
         queue.enqueue(3);
         queue.enqueue(4);
         queue.dequeue();
