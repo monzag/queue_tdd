@@ -52,5 +52,12 @@ class CustomQueueTest {
         assertEquals(expect, queue.dequeue());
     }
 
-
+    @Test
+    void testDequeue2() {
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.dequeue();
+        Integer expect = 4;
+        assertEquals(expect, queue.getFirst());
+    }
 }
