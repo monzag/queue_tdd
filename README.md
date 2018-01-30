@@ -1,4 +1,5 @@
-Queue - tdd 
+Queue - TDD 
 
-- methods: enqueue, dequeue
-- Node class
+- methods: enqueue, dequeue, getFirst
+- unit tests
+- classes: CustomQueue, Node, EmptyQueueException
