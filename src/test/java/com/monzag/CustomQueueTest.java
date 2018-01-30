@@ -21,8 +21,8 @@ class CustomQueueTest {
 
     @Test
     void testEqueue() {
-        queue.add(1);
-        queue.add(2);
+        queue.enqueue(1);
+        queue.enqueue(2);
         int expect = 1;
         assertEquals(expect, queue.getFirst());
     }
