@@ -20,4 +20,17 @@ public class CustomQueue<T> {
     public T getFirst() {
         return first.getData();
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+        Node current = first;
+
+        while (current != null) {
+            result += current.getData() + " ";
+            current = current.getNext();
+        }
+
+        return result;
+    }
 }
