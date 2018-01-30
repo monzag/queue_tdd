@@ -5,7 +5,7 @@ public class CustomQueue {
     private Node first;
     private Node last;
 
-    public void add(int i) {
+    public void enqueue(int i) {
         Node newItem = new Node(i);
         if (first == null) {
             first = newItem;
