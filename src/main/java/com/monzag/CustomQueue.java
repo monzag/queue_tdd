@@ -33,4 +33,15 @@ public class CustomQueue<T> {
 
         return result;
     }
+
+    public T dequeue() throws EmptyQueueException {
+        if (first==null) {
+            throw new EmptyQueueException();
+        }
+
+        T item = first.getData();
+        first = first.getNext();
+
+        return item;
+    }
 }
