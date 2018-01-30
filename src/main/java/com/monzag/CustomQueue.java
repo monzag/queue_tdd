@@ -1,11 +1,11 @@
 package com.monzag;
 
-public class CustomQueue {
+public class CustomQueue<T> {
 
-    private Node first;
-    private Node last;
+    private Node<T> first;
+    private Node<T> last;
 
-    public void enqueue(int i) {
+    public void enqueue(T i) {
         Node newItem = new Node(i);
         if (first == null) {
             first = newItem;
@@ -17,7 +17,7 @@ public class CustomQueue {
         }
     }
 
-    public int getFirst() {
+    public T getFirst() {
         return first.getData();
     }
 }
