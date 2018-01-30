@@ -60,4 +60,9 @@ class CustomQueueTest {
         Integer expect = 4;
         assertEquals(expect, queue.getFirst());
     }
+
+    @Test
+    void testDequeueIfEmptyQueue() {
+        assertThrows(EmptyQueueException.class, () -> queue.dequeue());
+    }
 }
