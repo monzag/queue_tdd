@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomQueueTest {
 
-    private CustomQueue queue;
+    private CustomQueue<Integer> queue;
 
     @BeforeEach
     void setup() {
-        this.queue = new CustomQueue();
+        this.queue = new CustomQueue<>();
     }
 
     @Test
@@ -23,8 +23,18 @@ class CustomQueueTest {
     void testEqueueInt() {
         queue.enqueue(1);
         queue.enqueue(2);
-        int expect = 1;
+        Integer expect = 1;
         assertEquals(expect, queue.getFirst());
+    }
+
+    @Test
+    void testEnqueueString() {
+        CustomQueue<String> textQueue = new CustomQueue<>();
+        textQueue.enqueue("000");
+        textQueue.enqueue("abc");
+        String expect = "000";
+        assertEquals(expect, textQueue.getFirst());
+
     }
 
 }
