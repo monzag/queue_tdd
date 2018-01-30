@@ -34,7 +34,14 @@ class CustomQueueTest {
         textQueue.enqueue("abc");
         String expect = "000";
         assertEquals(expect, textQueue.getFirst());
+    }
 
+    @Test
+    void testContextQueue() {
+        queue.enqueue(1);
+        queue.enqueue(2);
+        String expect = "1 2 ";
+        assertEquals(expect, queue.toString());
     }
 
 }
