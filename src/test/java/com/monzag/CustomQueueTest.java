@@ -21,8 +21,7 @@ class CustomQueueTest {
 
     @Test
     void testEqueueInt() {
-        queue.enqueue(1);
-        queue.enqueue(2);
+        enqueueDataToQueue();
         Integer expect = 1;
         assertEquals(expect, queue.getFirst());
     }
@@ -38,31 +37,35 @@ class CustomQueueTest {
 
     @Test
     void testContextQueue() {
-        queue.enqueue(1);
-        queue.enqueue(2);
-        String expect = "1 2 ";
+        enqueueDataToQueue();
+        String expect = "1 2 3 4 ";
         assertEquals(expect, queue.toString());
     }
 
     @Test
     void testDequeue() throws EmptyQueueException {
-        queue.enqueue(3);
-        queue.enqueue(4);
-        Integer expect = 3;
+        enqueueDataToQueue();
+        Integer expect = 1;
         assertEquals(expect, queue.dequeue());
     }
 
     @Test
     void testDequeue2() throws EmptyQueueException {
-        queue.enqueue(3);
-        queue.enqueue(4);
+        enqueueDataToQueue();
         queue.dequeue();
-        Integer expect = 4;
+        Integer expect = 2;
         assertEquals(expect, queue.getFirst());
     }
 
     @Test
     void testDequeueIfEmptyQueue() {
         assertThrows(EmptyQueueException.class, () -> queue.dequeue());
+    }
+
+    private void enqueueDataToQueue() {
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
     }
 }
